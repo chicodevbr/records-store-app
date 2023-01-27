@@ -1,6 +1,3 @@
-import React from 'react';
-import DefaultPage from '../Templates/DefaultPage';
-
 const Login = () => {
   return (
     <>

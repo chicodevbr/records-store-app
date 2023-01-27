@@ -1,10 +1,10 @@
-import React from 'react';
+import Albums from '../Components/Albums';
 import DefaultPage from '../Templates/DefaultPage';
 
 const Home = () => {
   return (
     <DefaultPage>
-      <div>Home</div>
+      <Albums />
     </DefaultPage>
   );
 };
