@@ -6,6 +6,22 @@ interface Params {
   method: string;
 }
 
+export interface Data {
+  _id: string;
+  album: string;
+  date: string;
+  description: string;
+  label: string;
+  name: string;
+  price: string;
+  quantity: string;
+  reviews: any;
+  tracks: string;
+  type: string;
+  year: string;
+  imgUrl: string;
+}
+
 const getConfig: Params = {
   baseUrl: 'https://records.onrender.com/api/v1',
   headers: {
