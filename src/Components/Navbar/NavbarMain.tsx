@@ -17,15 +17,7 @@ const NavbarMain = () => {
           Dark Records
         </a>
       </div>
-      <div className="navbar-end">
-        <div className="form-control">
-          <input
-            type="text"
-            placeholder="Search"
-            className="input input-bordered"
-          />
-        </div>
-      </div>
+      <div className="navbar-end">Chart</div>
     </div>
   );
 };

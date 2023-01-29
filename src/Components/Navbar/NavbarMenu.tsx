@@ -1,5 +1,6 @@
 import React from 'react';
 import Genre from './Genre';
+import Search from '../../UI/Search';
 
 const NavbarMenu = () => {
   return (
