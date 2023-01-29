@@ -1,10 +1,10 @@
-import Albums from '../Components/Albums';
+import Records from '../Components/Records';
 import DefaultPage from '../Templates/DefaultPage';
 
 const Home = () => {
   return (
     <DefaultPage>
-      <Albums />
+      <Records />
     </DefaultPage>
   );
 };

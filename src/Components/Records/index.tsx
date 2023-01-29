@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Data, getAPI } from '../../Api';
 
-const Albums = () => {
+const Records = () => {
   const [data, setData] = useState([]);
 
   const getData = () =>
@@ -41,4 +41,4 @@ const Albums = () => {
   );
 };
 
-export default Albums;
+export default Records;
