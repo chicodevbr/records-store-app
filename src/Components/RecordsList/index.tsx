@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Data, getAPI } from '../../Api';
 
-const Records = () => {
+const RecordsList = () => {
   const [data, setData] = useState([]);
 
   const getData = () =>
@@ -30,10 +30,9 @@ const Records = () => {
               <div className="badge badge-secondary">{album.type}</div>
             </h2>
             <p>{album.description}</p>
-
-            <div className="card-actions justify-end">
-              <button className="btn btn-primary">Buy Now</button>
-            </div>
+            <p className="font-mono font-semibold text-secondary-focus">
+              ${album.price}
+            </p>
           </div>
         </div>
       ))}
@@ -41,4 +40,4 @@ const Records = () => {
   );
 };
 
-export default Records;
+export default RecordsList;

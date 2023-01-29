@@ -1,9 +1,10 @@
 import React from 'react';
+import Genre from './Genre';
 
 const NavbarMenu = () => {
   return (
     <div className="flex justify-center flex-row text-md space-x-40 pb-5">
-      <a>Genre</a>
+      <Genre />
       <a>New Releases</a>
       <a>Vinyl</a>
       <a>CD</a>
