@@ -1,5 +1,5 @@
 import Divider from '../../UI/Divider';
-import Search from '../../UI/Search';
+
 import NavbarMain from './NavbarMain';
 import NavbarMenu from './NavbarMenu';
 

@@ -1,11 +1,12 @@
 import { useEffect, useState } from 'react';
 import { Data, getAPI } from '../../Api';
+import RecordsItems from './RecordsItems';
 
 const RecordsList = () => {
   const [data, setData] = useState([]);
 
   const getData = () =>
-    getAPI('album').then((res) => {
+    getAPI('records').then((res) => {
       if (res.status === 200) {
         setData(res.data);
       } else {
@@ -17,26 +18,46 @@ const RecordsList = () => {
     getData();
   }, []);
 
+  const filteredRockData = data.filter((obj: any) => {
+    return obj.genre === 'rock';
+  });
+
+  const filteredHipHopData = data.filter((obj: any) => {
+    return obj.genre === 'hip hop';
+  });
+
   return (
-    <div className="grid grid-cols-3 ml-4 mt-10">
-      {data.map((album: Data) => (
-        <div key={album._id} className="card w-96 bg-base-100 shadow-xl mb-8">
-          <figure>
-            <img src={album.tracks} alt={album.album} />
-          </figure>
-          <div className="card-body">
-            <h2 className="card-title">
-              {album.name}: {album.album}
-              <div className="badge badge-secondary">{album.type}</div>
-            </h2>
-            <p>{album.description}</p>
-            <p className="font-mono font-semibold text-secondary-focus">
-              ${album.price}
-            </p>
-          </div>
-        </div>
-      ))}
-    </div>
+    <>
+      <h3 className="text-4xl font-mono font-semi-bold m-5">Rock</h3>
+      <div className="grid grid-cols-3 ml-4 mt-10">
+        {filteredRockData.slice(0, 3).map((album: Data) => (
+          <RecordsItems
+            _id={album._id}
+            name={album.name}
+            artist={album.artist}
+            imgUrl={album.imgUrl}
+            description={album.description}
+            price={album.price}
+            type={album.type}
+          />
+        ))}
+      </div>
+
+      <h3 className="text-4xl font-mono font-semi-bold m-5">Hip Hop</h3>
+      <div className="grid grid-cols-3 ml-4 mt-10">
+        {filteredHipHopData.slice(0, 3).map((album: Data) => (
+          <RecordsItems
+            _id={album._id}
+            name={album.name}
+            artist={album.artist}
+            imgUrl={album.imgUrl}
+            description={album.description}
+            price={album.price}
+            type={album.type}
+          />
+        ))}
+      </div>
+    </>
   );
 };
 

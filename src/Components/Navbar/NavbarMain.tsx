@@ -1,5 +1,3 @@
-import React from 'react';
-
 const NavbarMain = () => {
   return (
     <div className="navbar mb-7">
@@ -13,11 +11,11 @@ const NavbarMain = () => {
         </a>
       </div>
       <div className="navbar-center">
-        <a className="text-neutral-focus normal-case text-5xl font-mono tracking-tight">
+        <a className="text-neutral-focus normal-case text-5xl font-mono font-bold tracking-tight">
           Dark Records
         </a>
       </div>
-      <div className="navbar-end">Chart</div>
+      <div className="navbar-end">Cart</div>
     </div>
   );
 };
