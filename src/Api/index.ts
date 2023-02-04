@@ -31,29 +31,25 @@ const getConfig: Params = {
   method: 'get',
 };
 
-export const getAPI = async (url: string): Promise<any> => {
-  return await axios({
+export const getAllRecords = () => async () => {
+  const response = await axios({
     ...getConfig,
-    url: `${getConfig.baseUrl}/${url}`,
-  })
-    .then((response) => {
-      return {
-        status: response.status,
-        data: response.data,
-      };
-    })
-    .catch((error) => {
-      return {
-        status: error.status,
-        data: error.response,
-      };
-    });
+    url: `${getConfig.baseUrl}/${'records'}`,
+  });
+
+  return response;
 };
 
-export const getAPIFiltered = async (
-  url: string,
-  params: string
-): Promise<any> => {
+export const getRecordsBySoul = () => async () => {
+  const response = await axios({
+    ...getConfig,
+    url: `${getConfig.baseUrl}/records/soul`,
+  });
+
+  return response;
+};
+
+export const getAPIFiltered = async (url: string, params: string) => {
   return axios({
     ...getConfig,
     url: `${getConfig.baseUrl}/${url}/${params}`,

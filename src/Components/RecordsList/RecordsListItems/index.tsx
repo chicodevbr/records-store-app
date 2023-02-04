@@ -8,7 +8,7 @@ interface IAlbum {
   price: string;
 }
 
-const RecordsItems = (props: IAlbum) => {
+const RecordsListItems = (props: IAlbum) => {
   return (
     <div key={props._id} className="card w-96 bg-base-100 shadow-xl mb-8">
       <figure>
@@ -28,4 +28,4 @@ const RecordsItems = (props: IAlbum) => {
   );
 };
 
-export default RecordsItems;
+export default RecordsListItems;
