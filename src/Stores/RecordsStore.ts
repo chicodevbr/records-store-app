@@ -1,5 +1,5 @@
 import { observable, action } from 'mobx';
-import { Data, getAPI } from '../Api';
+import { Data, getAPI } from '../MyApi';
 
 interface IResponse {
   status: number;

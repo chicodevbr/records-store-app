@@ -1,4 +1,4 @@
-import { Data } from '../../../Api';
+import { Data } from '../../../MyApi';
 import RecordsListItems from '../RecordsListItems';
 
 interface Props {
