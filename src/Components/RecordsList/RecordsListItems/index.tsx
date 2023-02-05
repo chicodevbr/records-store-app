@@ -1,19 +1,10 @@
-interface IAlbum {
-  _id: string;
-  imgUrl: string;
-  name: string;
-  artist: string;
-  type: string;
-  description: string;
-  price: string;
-}
+import { IAlbum } from '../../../Types';
 
 const RecordsListItems = (props: IAlbum) => {
   return (
     <div key={props._id} className="card w-96 bg-base-100 shadow-xl mb-8">
-      <figure>
-        <img src={props.imgUrl} alt={props.name} />
-      </figure>
+      <img src={props.imgUrl} alt={props.name} />
+
       <div className="card-body">
         <h2 className="card-title">
           {props.artist}: {props.name}

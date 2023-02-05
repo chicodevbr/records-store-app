@@ -1,6 +1,5 @@
-import React from 'react';
 import Genre from './Genre';
-import Search from '../../UI/Search';
+
 import { Link } from 'react-router-dom';
 
 const NavbarMenu = () => {

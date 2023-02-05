@@ -20,6 +20,17 @@ export interface PropsList {
   data: [Data] | any;
 }
 
+export interface IAlbum {
+  _id: string;
+  imgUrl: string;
+  name: string;
+  artist: string;
+  type: string;
+  description: string;
+  price: string;
+  label: string;
+}
+
 export interface Params {
   baseUrl: string;
   headers: any;

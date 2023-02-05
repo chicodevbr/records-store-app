@@ -55,6 +55,15 @@ export const listRecordsByType = (type: string) => async () => {
   return response;
 };
 
+export const getRecordDetails = (albumId: string | undefined) => async () => {
+  const response = await axios({
+    ...getConfig,
+    url: `${getConfig.baseUrl}/record/${albumId}`,
+  });
+
+  return response;
+};
+
 export const getAPIFiltered = async (url: string, params: string) => {
   return axios({
     ...getConfig,
