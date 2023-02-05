@@ -1,6 +1,6 @@
 import { useQuery } from 'react-query';
 import { useParams } from 'react-router-dom';
-import { getRecordDetails } from '../../MyApi';
+import { getRecordDetails } from '../../MyApi/api';
 import RecordDetailItem from '../RecordDetailItem';
 import Loading from '../../UI/Loading';
 import DefaultPage from '../../Templates/DefaultPage';

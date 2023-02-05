@@ -1,6 +1,6 @@
 import { useQuery } from 'react-query';
 import { useParams } from 'react-router-dom';
-import { listRecordsByGenre } from '../../MyApi';
+import { listRecordsByGenre } from '../../MyApi/api';
 import GenreList from './GenreList';
 import SkeletonList from '../RecordsList/RecordsListItems/SkeletonList';
 import DefaultPage from '../../Templates/DefaultPage';

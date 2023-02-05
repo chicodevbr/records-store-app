@@ -1,6 +1,6 @@
 import { useQuery } from 'react-query';
 import DefaultPage from '../Templates/DefaultPage';
-import { listRecordsByType } from '../MyApi';
+import { listRecordsByType } from '../MyApi/api';
 import CategoryList from '../Components/AllRecordsList';
 import SkeletonList from '../Components/RecordsList/RecordsListItems/SkeletonList';
 

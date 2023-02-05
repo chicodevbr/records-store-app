@@ -8,7 +8,6 @@ export interface Data {
   price: string;
   genre: string;
   quantity: string;
-  reviews: any;
   tracks: string;
   type: string;
   year: string;
@@ -29,6 +28,16 @@ export interface IAlbum {
   description: string;
   price: string;
   label: string;
+}
+
+export interface IAlbumList {
+  _id: string;
+  imgUrl: string;
+  name: string;
+  artist: string;
+  type: string;
+  description: string;
+  price: string;
 }
 
 export interface Params {

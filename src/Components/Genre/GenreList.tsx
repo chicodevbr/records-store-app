@@ -18,6 +18,7 @@ const GenreList = ({ data, title }: PropsList) => {
               description={album.description}
               price={album.price}
               type={album.type}
+              label={album.label}
             />
           </Link>
         ))}

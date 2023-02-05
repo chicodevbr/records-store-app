@@ -1,5 +1,5 @@
 import { useQuery } from 'react-query';
-import { listJustLanded } from '../../../MyApi';
+import { listJustLanded } from '../../../MyApi/api';
 import Highlight from '../Highlight';
 import SkeletonList from '../RecordsListItems/SkeletonList';
 
