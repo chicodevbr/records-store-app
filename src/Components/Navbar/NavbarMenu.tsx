@@ -16,8 +16,9 @@ const NavbarMenu = () => {
       <Link to={'/type/cd'}>
         <a>CD</a>
       </Link>
-
-      <a>Brazil</a>
+      <Link to={'/genre/brasil'}>
+        <a>Brasil</a>
+      </Link>
       <a>About</a>
     </div>
   );
