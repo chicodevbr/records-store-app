@@ -5,6 +5,9 @@ import { Link } from 'react-router-dom';
 const NavbarMenu = () => {
   return (
     <div className="flex justify-center flex-row text-md space-x-40 pb-5">
+      <Link to={'/records/all'}>
+        <a>All</a>
+      </Link>
       <Genre />
       <Link to={'/category/new-releases'}>
         <a>New Releases</a>

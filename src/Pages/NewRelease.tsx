@@ -3,7 +3,7 @@ import { listJustLanded } from '../MyApi';
 import DefaultPage from '../Templates/DefaultPage';
 
 import SkeletonList from '../Components/RecordsList/RecordsListItems/SkeletonList';
-import CategoryList from '../Components/CategoryList';
+import CategoryList from '../Components/AllRecordsList';
 
 const NewReleases = () => {
   const { data, isLoading } = useQuery(

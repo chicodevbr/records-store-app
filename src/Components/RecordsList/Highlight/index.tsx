@@ -1,12 +1,7 @@
-import { Data } from '../../../MyApi';
+import { Data, PropsList } from '../../../Types';
 import RecordsListItems from '../RecordsListItems';
 
-interface Props {
-  title: string;
-  data: [Data] | any;
-}
-
-const Highlight = ({ data, title }: Props) => {
+const Highlight = ({ data, title }: PropsList) => {
   return (
     <>
       <h3 className="text-4xl font-mono font-semi-bold m-5">{title}</h3>
@@ -24,6 +19,7 @@ const Highlight = ({ data, title }: Props) => {
               description={album.description}
               price={album.price}
               type={album.type}
+              label={album.label}
             />
           ))}
       </div>

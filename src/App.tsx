@@ -8,6 +8,7 @@ import NewReleases from './Pages/NewRelease';
 import Vinyl from './Pages/Vinyl';
 import CompactDisc from './Pages/CompactDisc';
 import RecordDetails from './Components/RecordDetails';
+import AllRecords from './Pages/AllRecords';
 
 const queryClient = new QueryClient();
 
@@ -17,6 +18,7 @@ const App = () => {
       <QueryClientProvider client={queryClient}>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/records/all" element={<AllRecords />} />
           <Route path="/genre/:name" element={<Genre />} />
           <Route path="/category/new-releases" element={<NewReleases />} />
           <Route path="/type/vinyl" element={<Vinyl />} />

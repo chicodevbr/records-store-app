@@ -1,7 +1,7 @@
 import RecordsListItems from '../RecordsList/RecordsListItems';
 import { Data, PropsList } from '../../Types';
 
-const CategoryList = ({ data, title }: PropsList) => {
+const AllRecordsList = ({ data, title }: PropsList) => {
   return (
     <>
       <h3 className="text-4xl font-mono font-semi-bold m-5">{title}</h3>
@@ -16,6 +16,7 @@ const CategoryList = ({ data, title }: PropsList) => {
             description={album.description}
             price={album.price}
             type={album.type}
+            label={album.label}
           />
         ))}
       </div>
@@ -23,4 +24,4 @@ const CategoryList = ({ data, title }: PropsList) => {
   );
 };
 
-export default CategoryList;
+export default AllRecordsList;

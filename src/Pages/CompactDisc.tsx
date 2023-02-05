@@ -1,7 +1,7 @@
 import { useQuery } from 'react-query';
 import { listRecordsByType } from '../MyApi';
 import DefaultPage from '../Templates/DefaultPage';
-import CategoryList from '../Components/CategoryList';
+import CategoryList from '../Components/AllRecordsList';
 import SkeletonList from '../Components/RecordsList/RecordsListItems/SkeletonList';
 
 const CompactDisc = () => {
