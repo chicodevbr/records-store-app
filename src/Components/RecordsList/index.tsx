@@ -1,5 +1,5 @@
 import { useQuery } from 'react-query';
-import { getAllRecords, getRecordsBySoul } from '../../MyApi';
+import { getAllRecords } from '../../MyApi';
 
 import 'react-loading-skeleton/dist/skeleton.css';
 import Highlight from './Highlight';

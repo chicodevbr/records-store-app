@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 const NavbarMain = () => {
   return (
     <div className="navbar mb-7">
@@ -11,9 +13,11 @@ const NavbarMain = () => {
         </a>
       </div>
       <div className="navbar-center">
-        <a className="text-neutral-focus normal-case text-5xl font-mono font-bold tracking-tight">
-          Dark Records
-        </a>
+        <Link to={'/'}>
+          <a className="text-neutral-focus normal-case text-5xl font-mono font-bold tracking-tight">
+            Dark Records
+          </a>
+        </Link>
       </div>
       <div className="navbar-end">Cart</div>
     </div>

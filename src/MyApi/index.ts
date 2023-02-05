@@ -40,10 +40,20 @@ export const getAllRecords = () => async () => {
   return response;
 };
 
-export const getRecordsBySoul = () => async () => {
+export const listRecordsByGenre = (params: string | undefined) => async () => {
+  if (params === 'hip-hop') {
+    const newParams = params.replace('-', ' ');
+
+    const response = await axios({
+      ...getConfig,
+      url: `${getConfig.baseUrl}/records/${newParams}`,
+    });
+
+    return response;
+  }
   const response = await axios({
     ...getConfig,
-    url: `${getConfig.baseUrl}/records/soul`,
+    url: `${getConfig.baseUrl}/records/${params}`,
   });
 
   return response;
