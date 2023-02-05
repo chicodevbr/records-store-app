@@ -1,12 +1,7 @@
-import { Data } from '../../MyApi';
+import { Data, PropsList } from '../../Types';
 import RecordsListItems from '../RecordsList/RecordsListItems';
 
-interface Props {
-  title: string | undefined;
-  data: [Data] | any;
-}
-
-const GenreList = ({ data, title }: Props) => {
+const GenreList = ({ data, title }: PropsList) => {
   return (
     <>
       <h3 className="text-4xl font-mono font-semi-bold m-5">{title}</h3>

@@ -1,27 +1,5 @@
 import axios from 'axios';
-
-interface Params {
-  baseUrl: string;
-  headers: any;
-  method: string;
-}
-
-export interface Data {
-  _id: string;
-  artist: string;
-  date: string;
-  description: string;
-  label: string;
-  name: string;
-  price: string;
-  genre: string;
-  quantity: string;
-  reviews: any;
-  tracks: string;
-  type: string;
-  year: string;
-  imgUrl: string;
-}
+import { Params } from '../Types';
 
 const getConfig: Params = {
   baseUrl: 'https://records.onrender.com/api/v1',
@@ -46,14 +24,23 @@ export const listRecordsByGenre = (params: string | undefined) => async () => {
 
     const response = await axios({
       ...getConfig,
-      url: `${getConfig.baseUrl}/records/${newParams}`,
+      url: `${getConfig.baseUrl}/records/genre/${newParams}`,
     });
 
     return response;
   }
   const response = await axios({
     ...getConfig,
-    url: `${getConfig.baseUrl}/records/${params}`,
+    url: `${getConfig.baseUrl}/records/genre/${params}`,
+  });
+
+  return response;
+};
+
+export const listJustLanded = () => async () => {
+  const response = await axios({
+    ...getConfig,
+    url: `${getConfig.baseUrl}/records/category/landed`,
   });
 
   return response;

@@ -30,7 +30,13 @@ const Genre = () => {
         </li>
 
         <li>
-          <Link to={'/genre/brazilian'}>
+          <Link to={'/genre/indie'}>
+            <a>Indie</a>
+          </Link>
+        </li>
+
+        <li>
+          <Link to={'/genre/brasil'}>
             <a>Brazilian Music</a>
           </Link>
         </li>

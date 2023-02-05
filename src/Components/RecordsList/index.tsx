@@ -4,6 +4,7 @@ import { getAllRecords } from '../../MyApi';
 import 'react-loading-skeleton/dist/skeleton.css';
 import Highlight from './Highlight';
 import SkeletonList from './RecordsListItems/SkeletonList';
+import NewReleases from './NewReleases/NewReleases';
 
 const RecordsList = () => {
   const { data, isLoading } = useQuery('records', getAllRecords());
@@ -23,6 +24,8 @@ const RecordsList = () => {
   return (
     <>
       {isLoading && <SkeletonList />}
+
+      {!isLoading && <NewReleases />}
 
       {!isLoading && <Highlight data={filteredRockData} title={'Rock'} />}
       {!isLoading && <Highlight data={filteredHipHopData} title={'Hip Hop'} />}

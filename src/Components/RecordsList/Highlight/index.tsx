@@ -11,18 +11,21 @@ const Highlight = ({ data, title }: Props) => {
     <>
       <h3 className="text-4xl font-mono font-semi-bold m-5">{title}</h3>
       <div className="grid grid-cols-3 ml-4 mt-10">
-        {data.slice(0, 3).map((album: Data) => (
-          <RecordsListItems
-            key={album._id}
-            _id={album._id}
-            name={album.name}
-            artist={album.artist}
-            imgUrl={album.imgUrl}
-            description={album.description}
-            price={album.price}
-            type={album.type}
-          />
-        ))}
+        {data
+          .slice(0, 3)
+          .reverse()
+          .map((album: Data) => (
+            <RecordsListItems
+              key={album._id}
+              _id={album._id}
+              name={album.name}
+              artist={album.artist}
+              imgUrl={album.imgUrl}
+              description={album.description}
+              price={album.price}
+              type={album.type}
+            />
+          ))}
       </div>
     </>
   );
