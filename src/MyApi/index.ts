@@ -46,6 +46,15 @@ export const listJustLanded = () => async () => {
   return response;
 };
 
+export const listRecordsByType = (type: string) => async () => {
+  const response = await axios({
+    ...getConfig,
+    url: `${getConfig.baseUrl}/records/type/${type}`,
+  });
+
+  return response;
+};
+
 export const getAPIFiltered = async (url: string, params: string) => {
   return axios({
     ...getConfig,

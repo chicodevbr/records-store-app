@@ -10,9 +10,13 @@ const NavbarMenu = () => {
       <Link to={'/category/new-releases'}>
         <a>New Releases</a>
       </Link>
+      <Link to={'/type/vinyl'}>
+        <a>Vinyl</a>
+      </Link>
+      <Link to={'/type/cd'}>
+        <a>CD</a>
+      </Link>
 
-      <a>Vinyl</a>
-      <a>CD</a>
       <a>Brazil</a>
       <a>About</a>
     </div>
