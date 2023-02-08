@@ -45,3 +45,13 @@ export interface Params {
   headers: any;
   method: string;
 }
+
+export interface ID {
+  id: string;
+}
+
+export interface Record {
+  id: string;
+  name: string;
+  price: string;
+}
