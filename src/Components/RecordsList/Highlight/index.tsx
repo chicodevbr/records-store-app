@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { Data, PropsList } from '../../../Types';
 import RecordsListItems from '../RecordsListItems';
 
@@ -10,17 +11,19 @@ const Highlight = ({ data, title }: PropsList) => {
           .slice(0, 3)
           .reverse()
           .map((album: Data) => (
-            <RecordsListItems
-              key={album._id}
-              _id={album._id}
-              name={album.name}
-              artist={album.artist}
-              imgUrl={album.imgUrl}
-              description={album.description}
-              price={album.price}
-              type={album.type}
-              label={album.label}
-            />
+            <Link to={`/record/details/${album._id}`}>
+              <RecordsListItems
+                key={album._id}
+                _id={album._id}
+                name={album.name}
+                artist={album.artist}
+                imgUrl={album.imgUrl}
+                description={album.description}
+                price={album.price}
+                type={album.type}
+                label={album.label}
+              />
+            </Link>
           ))}
       </div>
     </>
