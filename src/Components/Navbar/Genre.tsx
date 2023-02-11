@@ -9,36 +9,24 @@ const Genre = () => {
         className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52"
       >
         <li>
-          <Link to={'/genre/pop'}>
-            <a>Pop</a>
-          </Link>
+          <Link to={'/genre/pop'}>Pop</Link>
         </li>
         <li>
-          <Link to={'/genre/rock'}>
-            <a>Rock</a>
-          </Link>
+          <Link to={'/genre/rock'}>Rock</Link>
         </li>
         <li>
-          <Link to={'/genre/hip-hop'}>
-            <a>Hip-Hop</a>
-          </Link>
+          <Link to={'/genre/hip-hop'}>Hip-Hop</Link>
         </li>
         <li>
-          <Link to={'/genre/soul'}>
-            <a>Soul</a>
-          </Link>
+          <Link to={'/genre/soul'}>Soul</Link>
         </li>
 
         <li>
-          <Link to={'/genre/indie'}>
-            <a>Indie</a>
-          </Link>
+          <Link to={'/genre/indie'}>Indie</Link>
         </li>
 
         <li>
-          <Link to={'/genre/brasil'}>
-            <a>Brazilian Music</a>
-          </Link>
+          <Link to={'/genre/brasil'}>Brazilian Music</Link>
         </li>
       </ul>
     </div>

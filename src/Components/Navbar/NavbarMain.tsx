@@ -14,9 +14,9 @@ const NavbarMain = () => {
       </div>
       <div className="navbar-center">
         <Link to={'/'}>
-          <a className="text-neutral-focus normal-case text-5xl font-mono font-bold tracking-tight">
+          <p className="text-neutral-focus normal-case text-5xl font-mono font-bold tracking-tight">
             Dark Records
-          </a>
+          </p>
         </Link>
       </div>
       <div className="navbar-end">Cart</div>

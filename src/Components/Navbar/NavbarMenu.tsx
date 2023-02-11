@@ -5,23 +5,13 @@ import { Link } from 'react-router-dom';
 const NavbarMenu = () => {
   return (
     <div className="flex justify-center flex-row text-md space-x-40 pb-5">
-      <Link to={'/records/all'}>
-        <a>All</a>
-      </Link>
+      <Link to={'/records/all'}>All</Link>
       <Genre />
-      <Link to={'/category/new-releases'}>
-        <a>New Releases</a>
-      </Link>
-      <Link to={'/type/vinyl'}>
-        <a>Vinyl</a>
-      </Link>
-      <Link to={'/type/cd'}>
-        <a>CD</a>
-      </Link>
-      <Link to={'/genre/brasil'}>
-        <a>Brasil</a>
-      </Link>
-      <a>About</a>
+      <Link to={'/category/new-releases'}>New Releases</Link>
+      <Link to={'/type/vinyl'}>Viny</Link>
+      <Link to={'/type/cd'}>CD</Link>
+      <Link to={'/genre/brasil'}>Brasil</Link>
+      <Link to={'/'}>About</Link>
     </div>
   );
 };
