@@ -6,10 +6,10 @@ import store, { StoreContext } from './Store';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
-    <BrowserRouter>
-      <StoreContext.Provider value={store}>
+    <StoreContext.Provider value={store}>
+      <BrowserRouter>
         <App />
-      </StoreContext.Provider>
-    </BrowserRouter>
+      </BrowserRouter>
+    </StoreContext.Provider>
   </React.StrictMode>
 );

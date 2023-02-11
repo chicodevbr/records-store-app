@@ -1,35 +1,29 @@
 import { makeAutoObservable } from 'mobx';
-import { Record } from '../Types';
+import { ListCart, Record } from '../Types';
 
 const CartStore = () =>
   makeAutoObservable({
     items: [] as Record[],
-    list: {
-      items: [],
-      amount: Number,
-    },
+    list: [] as ListCart[],
 
-    add(_id: string, name: string, price: number, amount: number) {
-      const existingCartItemIndex = this.items.findIndex(
-        (item) => item.id === _id
-      );
-      const existCartItem = this.items[existingCartItemIndex];
+    add(_id: string, name: string, price: number, quantity: number) {
+      const itemIdex = this.items.findIndex((i) => i.id === _id);
 
-      let updatedItems: Record[];
+      const cartExistItem = this.items[itemIdex];
 
-      if (existCartItem) {
+      if (cartExistItem) {
         const updatedItem = {
-          ...existCartItem,
-          amount: existCartItem.amount + amount,
+          ...cartExistItem,
+          quantity: cartExistItem.quantity + quantity,
         };
-        updatedItems = [...this.items];
-        updatedItems[existingCartItemIndex] = updatedItem;
+
+        this.items[itemIdex] = updatedItem;
       } else {
         this.items.push({
           id: _id,
           name: name,
           price: price,
-          amount: amount,
+          quantity: quantity,
         });
       }
     },
@@ -40,3 +34,10 @@ const CartStore = () =>
   });
 
 export default CartStore;
+function increaseAmount() {
+  throw new Error('Function not implemented.');
+}
+
+function increaseQuantity(): number {
+  throw new Error('Function not implemented.');
+}

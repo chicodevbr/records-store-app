@@ -19,6 +19,11 @@ export interface PropsList {
   data: [Data] | any;
 }
 
+export interface PropsCartItem {
+  quantity: number | undefined;
+  price: number;
+}
+
 export interface IAlbum {
   _id: string;
   imgUrl: string;
@@ -53,5 +58,11 @@ export interface ID {
 export interface Record {
   id: string;
   name: string;
-  price: string;
+  price: number;
+  quantity: number;
+}
+
+export interface ListCart {
+  items: [Record];
+  amount: number;
 }

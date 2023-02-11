@@ -1,6 +1,9 @@
 import { Link } from 'react-router-dom';
+import CartDrop from '../CartDrop';
+import { useStore } from '../../Store';
 
 const NavbarMain = () => {
+  const { cart } = useStore();
   return (
     <div className="navbar mb-7">
       <div className="navbar-start">
@@ -19,7 +22,9 @@ const NavbarMain = () => {
           </p>
         </Link>
       </div>
-      <div className="navbar-end">Cart</div>
+      <div className="navbar-end">
+        <CartDrop cart={cart} />
+      </div>
     </div>
   );
 };

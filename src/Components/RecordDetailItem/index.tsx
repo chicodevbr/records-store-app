@@ -1,6 +1,19 @@
+import { FormEvent } from 'react';
 import { IAlbum } from '../../Types';
+import { useStore } from '../../Store';
 
 const RecordDetailItem = (props: IAlbum) => {
+  const { cart } = useStore();
+  const handleSubmit = (e: FormEvent) => {
+    e.preventDefault();
+
+    const formElement = e.target as HTMLFormElement;
+    const formData = new FormData(formElement);
+    const value = Number(formData.get('quantity'));
+
+    cart.add(props._id, props.name, 99, value);
+  };
+
   return (
     <div className="container mx-auto px-4 mt-5 ">
       <div className="columns-3">
@@ -22,16 +35,16 @@ const RecordDetailItem = (props: IAlbum) => {
         </div>
 
         <div className="mt-5 form-control">
-          <form action="">
+          <form onSubmit={handleSubmit}>
             <div className="input-group"></div>
-            <label htmlFor="">Quantity</label>
+            <label>Quantity:</label>
             <input
               type="number"
               name="quantity"
               id="quantity"
               min="1"
               max="5"
-              value="1"
+              defaultValue={1}
               className=" px-2"
             />
 
