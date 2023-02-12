@@ -5,6 +5,7 @@ const CartStore = () =>
   makeAutoObservable({
     items: [] as Record[],
     list: [] as ListCart[],
+    toggle: false,
 
     add(_id: string, name: string, price: number, quantity: number) {
       const itemIdex = this.items.findIndex((i) => i.id === _id);
@@ -25,19 +26,17 @@ const CartStore = () =>
           price: price,
           quantity: quantity,
         });
+        this.toggleCart();
       }
     },
 
     remove(record: Record) {
       this.items = this.items.filter((r) => r.id !== record.id);
     },
+
+    toggleCart() {
+      this.toggle = !this.toggle;
+    },
   });
 
 export default CartStore;
-function increaseAmount() {
-  throw new Error('Function not implemented.');
-}
-
-function increaseQuantity(): number {
-  throw new Error('Function not implemented.');
-}
