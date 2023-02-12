@@ -30,7 +30,10 @@ const CartDrop = ({ cart }: { cart: ReturnType<typeof CartStore> }) => {
         tabIndex={0}
         className="mt-3 card card-compact dropdown-content w-52 bg-base-100 shadow"
       >
-        <CartItem price={55} quantity={1} />
+        <CartItem
+          price={cart.items[0]?.price}
+          quantity={cart.items[0]?.quantity}
+        />
       </div>
     </div>
   );
