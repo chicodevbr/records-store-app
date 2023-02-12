@@ -32,16 +32,10 @@ const CartDrop = ({ cart }: { cart: ReturnType<typeof CartStore> }) => {
         tabIndex={0}
         className="mt-3 card card-compact dropdown-content w-52 bg-base-100 shadow"
       >
-        <CartItem
-          price={cart.items[0]?.price}
-          quantity={cart.items[0]?.quantity}
-        />
+        <CartItem price={cart.amount} quantity={cart.items[0]?.quantity} />
       </div>
     </div>
   );
 };
 
 export default observer(CartDrop);
-function isEmptyCart() {
-  throw new Error('Function not implemented.');
-}

@@ -11,7 +11,7 @@ const RecordDetailItem = (props: IAlbum) => {
     const formData = new FormData(formElement);
     const value = Number(formData.get('quantity'));
 
-    cart.add(props._id, props.name, 99, value);
+    cart.add(props._id, props.name, props.imgUrl, props.price, value);
   };
 
   return (

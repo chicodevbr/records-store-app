@@ -5,7 +5,7 @@ export interface Data {
   description: string;
   label: string;
   name: string;
-  price: string;
+  price: number;
   genre: string;
   quantity: string;
   tracks: string;
@@ -31,7 +31,7 @@ export interface IAlbum {
   artist: string;
   type: string;
   description: string;
-  price: string;
+  price: number;
   label: string;
 }
 
@@ -42,7 +42,7 @@ export interface IAlbumList {
   artist: string;
   type: string;
   description: string;
-  price: string;
+  price: number;
 }
 
 export interface Params {
@@ -58,11 +58,21 @@ export interface ID {
 export interface Record {
   id: string;
   name: string;
+  imgUrl: string;
   price: number;
   quantity: number;
+  amount: number;
 }
 
 export interface ListCart {
   items: [Record];
   amount: number;
+}
+
+export interface OrderProps {
+  id: string;
+  name: string;
+  imgUrl: string;
+  quantity: number;
+  total: number;
 }
