@@ -12,6 +12,8 @@ const RecordDetails = () => {
     getRecordDetails(albumId)
   );
 
+  const priceNumber = Number.parseFloat(data?.data.price);
+
   return (
     <DefaultPage>
       {!isLoading ? (
@@ -20,7 +22,7 @@ const RecordDetails = () => {
           name={data?.data.name}
           artist={data?.data.artist}
           imgUrl={data?.data.imgUrl}
-          price={data?.data.price}
+          price={priceNumber}
           description={data?.data.description}
           type={data?.data.type}
           label={data?.data.label}

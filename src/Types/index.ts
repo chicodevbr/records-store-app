@@ -76,3 +76,8 @@ export interface OrderProps {
   quantity: number;
   total: number;
 }
+
+export interface OrderFinalProps {
+  total: number;
+  quantity: number;
+}

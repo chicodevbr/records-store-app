@@ -5,7 +5,8 @@ const CartStore = () =>
   makeAutoObservable({
     items: [] as Record[],
     toggle: false,
-    amount: 0,
+    totalQuantity: 0,
+    totalPrice: 0,
 
     add(
       _id: string,
@@ -19,16 +20,16 @@ const CartStore = () =>
       const cartExistItem = this.items[itemIdex];
 
       if (cartExistItem) {
-        const updatedAmount =
-          quantity + this.items[itemIdex].quantity * this.items[itemIdex].price;
         const updatedItem = {
           ...cartExistItem,
           quantity: cartExistItem.quantity + quantity,
-          amount: updatedAmount,
+          amount: cartExistItem.amount + quantity * price,
         };
 
         this.items[itemIdex] = updatedItem;
-        this.getAmount(this.items[itemIdex]);
+
+        this.getTotalPrice();
+        this.getTotalQuantity();
       } else {
         this.items.push({
           id: _id,
@@ -36,9 +37,11 @@ const CartStore = () =>
           price: price,
           imgUrl: imgUrl,
           quantity: quantity,
-          amount: price + quantity * price,
+          amount: quantity * price,
         });
-        this.toggleCart();
+
+        this.getTotalPrice();
+        this.getTotalQuantity();
       }
     },
 
@@ -50,8 +53,16 @@ const CartStore = () =>
       this.toggle = !this.toggle;
     },
 
-    getAmount(items: Record) {
-      this.amount = items.quantity * items.price;
+    getTotalPrice() {
+      this.totalPrice = this.items
+        .map((i) => i.amount)
+        .reduce((acc, current) => acc + current, 0);
+    },
+
+    getTotalQuantity() {
+      this.totalQuantity = this.items
+        .map((i) => i.quantity)
+        .reduce((acc, current) => acc + current, 0);
     },
   });
 
